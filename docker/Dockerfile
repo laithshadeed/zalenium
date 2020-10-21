@@ -233,7 +233,7 @@ RUN if [ "${kubernetesSlimVersion}" = "false" ]; then \
 # Var `DOCKER` points to which binary to use at runtime
 ENV DOCKER_HOST="unix:///var/run/docker.sock" \
     DOCKER_BUCKET="download.docker.com" \
-    DOCKER="18.09.0"
+    DOCKER="19.03.9"
 
 #----------------------------
 # Docker 18.09 -- 15 MB
@@ -242,7 +242,7 @@ ENV DOCKER_HOST="unix:///var/run/docker.sock" \
 # Note: Starting with 1.13, newer CLIs can talk to older daemons
 RUN if [ "${kubernetesSlimVersion}" = "false" ]; then \
         set -x \
-        && DOCKER_VERSION="18.09.0" \
+        && DOCKER_VERSION="19.03.9" \
         && curl -fSL "https://${DOCKER_BUCKET}/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" \
                 -o docker.tgz \
         && tar -xzvf docker.tgz \
